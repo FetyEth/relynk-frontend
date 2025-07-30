@@ -255,7 +255,10 @@ export default function HeroSection() {
           variants={fadeInUp}
         >
           <motion.div {...scaleOnHover}>
-            <Button className="bg-main text-white hover:bg-main/90 text-lg px-10 py-5 shadow-xl">
+            <Button 
+              className="bg-main text-white hover:bg-main/90 text-lg px-10 py-5 shadow-xl"
+              onClick={() => window.location.href = '/dashboard/links/create'}
+            >
               <motion.span
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -268,8 +271,9 @@ export default function HeroSection() {
             <Button
               variant="neutral"
               className="text-lg px-10 py-5 border-2 border-main/20 shadow-main/20! shadow-sm"
+              onClick={() => window.location.href = '/dashboard'}
             >
-              View Demo
+              View Dashboard
             </Button>
           </motion.div>
         </motion.div>

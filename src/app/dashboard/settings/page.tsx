@@ -4,7 +4,7 @@ import { DashboardLayout } from "@/components/dashboard-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
+import { WalletInfo } from "@/components/wallet-info";
 import {
   User,
   CreditCard,
@@ -126,46 +126,7 @@ export default function SettingsPage() {
             </Card>
 
             {/* Wallet Connection */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <CreditCard className="h-5 w-5" />
-                  Wallet Connection
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center justify-between p-4 border border-border rounded-base bg-secondary-background">
-                  <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-base bg-main flex items-center justify-center">
-                      <span className="text-main-foreground font-heading">
-                        W
-                      </span>
-                    </div>
-                    <div>
-                      <p className="font-heading text-foreground">
-                        MetaMask Wallet
-                      </p>
-                      <p className="text-sm text-foreground/60">
-                        0x1234...5678
-                      </p>
-                    </div>
-                  </div>
-                  <Badge
-                    variant="outline"
-                    className="border-green-500 text-green-600"
-                  >
-                    Connected
-                  </Badge>
-                </div>
-
-                <Button
-                  variant="neutral"
-                  className="w-full border border-border shadow-shadow"
-                >
-                  Connect Additional Wallet
-                </Button>
-              </CardContent>
-            </Card>
+            <WalletInfo />
 
             {/* Payment Settings */}
             <Card>

@@ -7,6 +7,7 @@ import { useRef } from "react";
 import { Shield, CreditCard, Users, Zap, CheckCircle } from "lucide-react";
 import { fadeInUp, scaleOnHover, staggerContainer } from "@/lib/motion-variant";
 import GridPattern from "@/components/ui/grid-pattern";
+import Link from "next/link";
 
 export default function HilightedSection() {
   const useCasesRef = useRef(null);
@@ -224,19 +225,27 @@ export default function HilightedSection() {
               variants={fadeInUp}
             >
               <motion.div {...scaleOnHover}>
-                <Button className="bg-main text-white hover:bg-main/90 text-xl px-12 py-6 shadow-xl">
-                  <motion.span
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    Get Started Now
-                  </motion.span>
-                </Button>
+                <Link href="/dashboard">
+                  <Button className="bg-main text-white hover:bg-main/90 text-xl px-12 py-6 shadow-xl">
+                    <motion.span
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      Get Started Now
+                    </motion.span>
+                  </Button>
+                </Link>
               </motion.div>
               <motion.div {...scaleOnHover}>
                 <Button
                   variant="neutral"
                   className="text-xl px-12 py-6 border-2 border-main/20 shadow-main"
+                  onClick={() => {
+                    const howItWorksSection = document.querySelector('#how-it-works');
+                    if (howItWorksSection) {
+                      howItWorksSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
                   Learn More
                 </Button>

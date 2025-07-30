@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { DashboardLayout } from "@/components/dashboard-layout";
 import { StatCard } from "@/components/ui/stat-card";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import {
   BarChart3,
   CreditCard,
-  Link,
+  Link as LinkIcon,
   MousePointer,
   Plus,
   TrendingUp,
@@ -63,10 +64,12 @@ export default function DashboardPage() {
               Here&apos;s what&apos;s happening with your links today~ ✨
             </p>
           </div>
-          <Button className="bg-main text-main-foreground hover:bg-main/90 shadow-shadow glow-hover hover:scale-105 transition-all duration-300">
-            <Plus className="h-4 w-4 mr-2" />
-            Create Link
-          </Button>
+          <Link href="/dashboard/links/create">
+            <Button className="bg-main text-main-foreground hover:bg-main/90 shadow-shadow glow-hover hover:scale-105 transition-all duration-300">
+              <Plus className="h-4 w-4 mr-2" />
+              Create Link
+            </Button>
+          </Link>
         </div>
 
         {/* Stats Grid */}
@@ -75,7 +78,7 @@ export default function DashboardPage() {
             <StatCard
               title="Total Links 🔗"
               value={mockStats.totalLinks}
-              icon={<Link className="h-4 w-4" />}
+              icon={<LinkIcon className="h-4 w-4" />}
               trend={{ value: 12, isPositive: true }}
             />
           </div>

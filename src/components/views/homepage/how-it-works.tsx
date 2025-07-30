@@ -15,7 +15,7 @@ export default function HowItWorksSection() {
   });
 
   return (
-    <section className="w-full py-24 bg-white relative overflow-hidden">
+    <section id="how-it-works" className="w-full py-24 bg-white relative overflow-hidden">
       <motion.div
         className="absolute top-0 right-0 w-48 h-48 bg-purple-500/5 rounded-full blur-3xl"
         animate={{

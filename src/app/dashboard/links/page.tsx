@@ -15,6 +15,7 @@ import {
   Search,
   Trash2
 } from "lucide-react"
+import Link from "next/link"
 
 // Mock data for links
 const mockLinks = [
@@ -85,10 +86,12 @@ export default function LinksPage() {
               Manage and track all your payment links.
             </p>
           </div>
-          <Button className="bg-main text-main-foreground hover:bg-main/90 shadow-shadow">
-            <Plus className="h-4 w-4 mr-2" />
-            Create New Link
-          </Button>
+          <Link href="/dashboard/links/create">
+            <Button className="bg-main text-main-foreground hover:bg-main/90 shadow-shadow glow-hover hover:scale-105 transition-all duration-300">
+              <Plus className="h-4 w-4 mr-2" />
+              Create New Link
+            </Button>
+          </Link>
         </div>
 
         {/* Search and Filters */}

@@ -4,6 +4,7 @@ import { Config, cookieStorage, createStorage, WagmiProvider } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { XellarKitProvider, defaultConfig, darkTheme } from "@xellar/kit";
 import { liskSepolia } from "viem/chains";
+import { SessionProvider } from "next-auth/react";
 
 const config = defaultConfig({
   appName: "Xellar",
@@ -22,12 +23,14 @@ const config = defaultConfig({
 
 const queryClient = new QueryClient();
 
-export const Web3Provider = ({ children }: { children: React.ReactNode }) => {
+export function Web3Provider({ children }: { children: React.ReactNode }) {
   return (
-    <WagmiProvider config={config}>
-      <QueryClientProvider client={queryClient}>
-        <XellarKitProvider theme={darkTheme}>{children}</XellarKitProvider>
-      </QueryClientProvider>
-    </WagmiProvider>
+    <SessionProvider>
+      <WagmiProvider config={config}>
+        <QueryClientProvider client={queryClient}>
+          <XellarKitProvider theme={darkTheme}>{children}</XellarKitProvider>
+        </QueryClientProvider>
+      </WagmiProvider>
+    </SessionProvider>
   );
-};
+}

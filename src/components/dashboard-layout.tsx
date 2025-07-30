@@ -2,26 +2,54 @@
 
 import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar"
 import { DashboardSidebar } from "@/components/dashboard-sidebar"
+import { SiweAuthGuard } from "@/components/siwe-auth-guard"
+import { useSiweAuth } from "@/hooks/use-siwe-auth"
+import { Button } from "@/components/ui/button"
+import { LogOut, User } from "lucide-react"
 
 interface DashboardLayoutProps {
   children: React.ReactNode
 }
 
 export function DashboardLayout({ children }: DashboardLayoutProps) {
+  const { logout, address } = useSiweAuth()
+
   return (
-    <SidebarProvider>
-      <DashboardSidebar />
-      <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2 border-b border-border px-4 bg-gradient-to-r from-background to-secondary-background/50 backdrop-blur-sm">
-          <SidebarTrigger className="-ml-1 hover:scale-110 transition-transform duration-300" />
-          <div className="flex items-center gap-2">
-            <h1 className="text-lg font-heading bg-gradient-to-r from-main to-main/70 bg-clip-text text-transparent">Dashboard</h1>
+    <SiweAuthGuard>
+      <SidebarProvider>
+        <DashboardSidebar />
+        <SidebarInset>
+          <header className="flex h-16 shrink-0 items-center justify-between gap-2 border-b border-border px-4">
+            <div className="flex items-center gap-2">
+              <SidebarTrigger className="-ml-1" />
+              <div className="h-4 w-px bg-border" />
+              <h1 className="text-lg font-heading text-foreground">Dashboard</h1>
+            </div>
+            
+            {/* User Info and Logout */}
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-base bg-secondary-background/50 border border-border">
+                <User className="h-4 w-4 text-foreground/60" />
+                <span className="text-sm text-foreground/80 font-mono">
+                  {address ? `${address.slice(0, 6)}...${address.slice(-4)}` : ""}
+                </span>
+              </div>
+              <Button
+                variant="neutral"
+                size="sm"
+                onClick={logout}
+                className="glow-hover hover:scale-105 transition-all duration-300"
+              >
+                <LogOut className="h-4 w-4 mr-2" />
+                Logout
+              </Button>
+            </div>
+          </header>
+          <div className="flex flex-1 flex-col gap-4 p-4">
+            {children}
           </div>
-        </header>
-        <div className="flex flex-1 flex-col gap-4 p-4 bg-gradient-to-br from-background via-background to-secondary-background/30">
-          {children}
-        </div>
-      </SidebarInset>
-    </SidebarProvider>
+        </SidebarInset>
+      </SidebarProvider>
+    </SiweAuthGuard>
   )
 }

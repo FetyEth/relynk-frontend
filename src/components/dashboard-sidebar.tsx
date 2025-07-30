@@ -8,7 +8,6 @@ import {
   Plus,
   Settings,
   User,
-  Wallet,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -101,7 +100,7 @@ export function DashboardSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/dashboard/create">
+                  <Link href="/dashboard/links/create">
                     <Plus className="h-4 w-4" />
                     <span>Create Link</span>
                   </Link>

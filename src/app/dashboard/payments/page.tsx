@@ -1,29 +1,28 @@
-"use client"
+"use client";
 
-import { DashboardLayout } from "@/components/dashboard-layout"
-import { StatusBadge } from "@/components/ui/status-badge"
-import { StatCard } from "@/components/ui/stat-card"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { 
+import { DashboardLayout } from "@/components/dashboard-layout";
+import { StatusBadge } from "@/components/ui/status-badge";
+import { StatCard } from "@/components/ui/stat-card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
   ArrowDownLeft,
   ArrowUpRight,
   Clock,
   CreditCard,
   ExternalLink,
   Filter,
-  Search
-} from "lucide-react"
+  Search,
+} from "lucide-react";
 
 // Mock data for payments
 const mockPaymentStats = {
   totalSent: "$1,247",
-  totalReceived: "$3,892", 
+  totalReceived: "$3,892",
   pending: "$156",
-  thisMonth: "$2,847"
-}
+  thisMonth: "$2,847",
+};
 
 const mockPayments = [
   {
@@ -36,45 +35,45 @@ const mockPayments = [
     status: "completed" as const,
     txHash: "0xabcd...efgh",
     timestamp: "2024-01-15 14:30",
-    linkTitle: "Premium Design Pack"
+    linkTitle: "Premium Design Pack",
   },
   {
     id: 2,
     type: "received",
-    amount: "$20.00", 
+    amount: "$20.00",
     currency: "USDC",
     from: "0x5678...1234",
     to: "0x9876...4321",
     status: "completed" as const,
     txHash: "0xefgh...ijkl",
     timestamp: "2024-01-15 12:15",
-    linkTitle: "Notion Template Bundle"
+    linkTitle: "Notion Template Bundle",
   },
   {
     id: 3,
     type: "received",
     amount: "$5.00",
-    currency: "USDC", 
+    currency: "USDC",
     from: "0x9999...8888",
     to: "0x9876...4321",
     status: "pending" as const,
     txHash: "0xmnop...qrst",
     timestamp: "2024-01-15 11:45",
-    linkTitle: "Coffee Donation"
+    linkTitle: "Coffee Donation",
   },
   {
     id: 4,
     type: "sent",
     amount: "$100.00",
     currency: "USDC",
-    from: "0x9876...4321", 
+    from: "0x9876...4321",
     to: "0x1111...2222",
     status: "completed" as const,
     txHash: "0xuvwx...yzab",
     timestamp: "2024-01-14 16:20",
-    linkTitle: "Platform Fee"
-  }
-]
+    linkTitle: "Platform Fee",
+  },
+];
 
 export default function PaymentsPage() {
   return (
@@ -125,12 +124,15 @@ export default function PaymentsPage() {
             <div className="flex items-center gap-4">
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-foreground/60" />
-                <Input 
+                <Input
                   placeholder="Search by transaction hash, address, or amount..."
                   className="pl-10 border border-border shadow-shadow"
                 />
               </div>
-              <Button variant="neutral" className="border border-border shadow-shadow">
+              <Button
+                variant="neutral"
+                className="border border-border shadow-shadow"
+              >
                 <Filter className="h-4 w-4 mr-2" />
                 Filter
               </Button>
@@ -146,23 +148,25 @@ export default function PaymentsPage() {
           <CardContent>
             <div className="space-y-4">
               {mockPayments.map((payment) => (
-                <div 
+                <div
                   key={payment.id}
                   className="flex items-center justify-between p-4 border border-border rounded-base bg-secondary-background hover:bg-background transition-colors"
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`p-2 rounded-base ${
-                      payment.type === 'received' 
-                        ? 'bg-chart-4/10 text-chart-4' 
-                        : 'bg-chart-1/10 text-chart-1'
-                    }`}>
-                      {payment.type === 'received' ? (
+                    <div
+                      className={`p-2 rounded-base ${
+                        payment.type === "received"
+                          ? "bg-chart-4/10 text-chart-4"
+                          : "bg-chart-1/10 text-chart-1"
+                      }`}
+                    >
+                      {payment.type === "received" ? (
                         <ArrowDownLeft className="h-4 w-4" />
                       ) : (
                         <ArrowUpRight className="h-4 w-4" />
                       )}
                     </div>
-                    
+
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
                         <span className="font-heading text-foreground">
@@ -188,8 +192,8 @@ export default function PaymentsPage() {
                     </div>
                     <div className="flex items-center gap-2 text-xs text-foreground/40">
                       <span>{payment.txHash}</span>
-                      <Button 
-                        variant="neutral" 
+                      <Button
+                        variant="neutral"
                         size="sm"
                         className="h-5 w-5 p-0 hover:bg-main/10"
                       >
@@ -204,5 +208,5 @@ export default function PaymentsPage() {
         </Card>
       </div>
     </DashboardLayout>
-  )
+  );
 }
