@@ -1,19 +1,9 @@
-"use client";
-
-import dynamic from "next/dynamic";
 import { Button } from "./button";
-
-const ConnectButton = dynamic(
-  () => import("@xellar/kit").then((mod) => mod.ConnectButton.Custom),
-  {
-    ssr: false,
-    loading: () => <Button variant="neutral">Loading...</Button>,
-  }
-);
+import { ConnectButton } from "@xellar/kit";
 
 export default function ConnectWallet({ className }: { className?: string }) {
   return (
-    <ConnectButton>
+    <ConnectButton.Custom>
       {({ isConnected, account, openConnectModal, openProfileModal }) => (
         <div>
           {isConnected ? (
@@ -28,6 +18,6 @@ export default function ConnectWallet({ className }: { className?: string }) {
           )}
         </div>
       )}
-    </ConnectButton>
+    </ConnectButton.Custom>
   );
 }
