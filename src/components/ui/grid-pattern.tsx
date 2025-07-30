@@ -6,8 +6,8 @@ export default function GridPattern({ className }: { className?: string }) {
       className={cn("absolute inset-0 z-0", className)}
       style={{
         backgroundImage: `
-        linear-gradient(to right, #FFFFFF 1px, transparent 1px),
-        linear-gradient(to bottom, #FFFFFF 1px, transparent 1px)
+        linear-gradient(to right, #F0F0F0 1px, transparent 1px),
+        linear-gradient(to bottom, #F0F0F0 1px, transparent 1px)
       `,
         backgroundSize: "50px 50px",
         WebkitMaskImage:
