@@ -127,10 +127,10 @@ export default function PaymentsPage() {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-foreground/60" />
                 <Input 
                   placeholder="Search by transaction hash, address, or amount..."
-                  className="pl-10 border-2 border-border shadow-shadow"
+                  className="pl-10 border border-border shadow-shadow"
                 />
               </div>
-              <Button variant="neutral" className="border-2 border-border shadow-shadow">
+              <Button variant="neutral" className="border border-border shadow-shadow">
                 <Filter className="h-4 w-4 mr-2" />
                 Filter
               </Button>
@@ -148,7 +148,7 @@ export default function PaymentsPage() {
               {mockPayments.map((payment) => (
                 <div 
                   key={payment.id}
-                  className="flex items-center justify-between p-4 border-2 border-border rounded-base bg-secondary-background hover:bg-background transition-colors"
+                  className="flex items-center justify-between p-4 border border-border rounded-base bg-secondary-background hover:bg-background transition-colors"
                 >
                   <div className="flex items-center gap-4">
                     <div className={`p-2 rounded-base ${

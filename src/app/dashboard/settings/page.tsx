@@ -83,7 +83,7 @@ export default function SettingsPage() {
                     </label>
                     <Input
                       placeholder="John"
-                      className="border-2 border-border shadow-shadow"
+                      className="border border-border shadow-shadow"
                     />
                   </div>
                   <div>
@@ -92,7 +92,7 @@ export default function SettingsPage() {
                     </label>
                     <Input
                       placeholder="Doe"
-                      className="border-2 border-border shadow-shadow"
+                      className="border border-border shadow-shadow"
                     />
                   </div>
                 </div>
@@ -104,7 +104,7 @@ export default function SettingsPage() {
                   <Input
                     type="email"
                     placeholder="john@example.com"
-                    className="border-2 border-border shadow-shadow"
+                    className="border border-border shadow-shadow"
                   />
                 </div>
 
@@ -114,7 +114,7 @@ export default function SettingsPage() {
                   </label>
                   <textarea
                     placeholder="Tell us about yourself..."
-                    className="w-full min-h-[100px] px-3 py-2 border-2 border-border rounded-base shadow-shadow bg-background text-foreground placeholder:text-foreground/60 focus:outline-none focus:ring-2 focus:ring-main"
+                    className="w-full min-h-[100px] px-3 py-2 border border-border rounded-base shadow-shadow bg-background text-foreground placeholder:text-foreground/60 focus:outline-none focus:ring-2 focus:ring-main"
                   />
                 </div>
 
@@ -134,7 +134,7 @@ export default function SettingsPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex items-center justify-between p-4 border-2 border-border rounded-base bg-secondary-background">
+                <div className="flex items-center justify-between p-4 border border-border rounded-base bg-secondary-background">
                   <div className="flex items-center gap-3">
                     <div className="h-10 w-10 rounded-base bg-main flex items-center justify-center">
                       <span className="text-main-foreground font-heading">
@@ -160,7 +160,7 @@ export default function SettingsPage() {
 
                 <Button
                   variant="neutral"
-                  className="w-full border-2 border-border shadow-shadow"
+                  className="w-full border border-border shadow-shadow"
                 >
                   Connect Additional Wallet
                 </Button>
@@ -180,7 +180,7 @@ export default function SettingsPage() {
                   <label className="text-sm font-base text-foreground/80 mb-2 block">
                     Default Currency
                   </label>
-                  <select className="w-full px-3 py-2 border-2 border-border rounded-base shadow-shadow bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-main">
+                  <select className="w-full px-3 py-2 border border-border rounded-base shadow-shadow bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-main">
                     <option>USD ($)</option>
                     <option>EUR (€)</option>
                     <option>ETH (Ξ)</option>
@@ -199,7 +199,7 @@ export default function SettingsPage() {
                   />
                 </div>
 
-                <div className="flex items-center justify-between p-4 border-2 border-border rounded-base">
+                <div className="flex items-center justify-between p-4 border border-border rounded-base">
                   <div>
                     <p className="font-heading text-foreground">
                       Auto-withdraw
@@ -224,7 +224,7 @@ export default function SettingsPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="p-4 border-2 border-red-200 rounded-base bg-red-50">
+                <div className="p-4 border border-red-200 rounded-base bg-red-50">
                   <h3 className="font-heading text-red-800 mb-2">
                     Delete Account
                   </h3>

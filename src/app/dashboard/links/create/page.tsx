@@ -13,7 +13,7 @@ export default function CreateLinkPage() {
         {/* Header */}
         <div className="flex items-center gap-4">
           <Link href="/dashboard/links">
-            <Button variant="neutral" size="sm" className="border-2 border-border shadow-shadow">
+            <Button variant="neutral" size="sm" className="border border-border shadow-shadow">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Links
             </Button>

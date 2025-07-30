@@ -99,10 +99,10 @@ export default function LinksPage() {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-foreground/60" />
                 <Input 
                   placeholder="Search links by title or URL..."
-                  className="pl-10 border-2 border-border shadow-shadow"
+                  className="pl-10 border border-border shadow-shadow"
                 />
               </div>
-              <Button variant="neutral" className="border-2 border-border shadow-shadow">
+              <Button variant="neutral" className="border border-border shadow-shadow">
                 Filter
               </Button>
             </div>
@@ -119,13 +119,13 @@ export default function LinksPage() {
               {mockLinks.map((link) => (
                 <div 
                   key={link.id}
-                  className="flex items-center justify-between p-4 border-2 border-border rounded-base bg-secondary-background hover:bg-background transition-colors"
+                  className="flex items-center justify-between p-4 border border-border rounded-base bg-secondary-background hover:bg-background transition-colors"
                 >
                   <div className="flex-1 space-y-2">
                     <div className="flex items-center gap-3">
                       <h3 className="font-heading text-foreground">{link.title}</h3>
                       <Badge 
-                        className={`border-2 font-base text-xs px-2 py-1 rounded-base ${linkTypes[link.type as keyof typeof linkTypes]}`}
+                        className={`border font-base text-xs px-2 py-1 rounded-base ${linkTypes[link.type as keyof typeof linkTypes]}`}
                       >
                         {link.type}
                       </Badge>
@@ -167,21 +167,21 @@ export default function LinksPage() {
                       <Button 
                         variant="neutral" 
                         size="sm"
-                        className="border-2 border-border shadow-shadow"
+                        className="border border-border shadow-shadow"
                       >
                         <Edit className="h-4 w-4" />
                       </Button>
                       <Button 
                         variant="neutral" 
                         size="sm"
-                        className="border-2 border-border shadow-shadow hover:bg-chart-1 hover:text-white"
+                        className="border border-border shadow-shadow hover:bg-chart-1 hover:text-white"
                       >
                         <Trash2 className="h-4 w-4" />
                       </Button>
                       <Button 
                         variant="neutral" 
                         size="sm"
-                        className="border-2 border-border shadow-shadow"
+                        className="border border-border shadow-shadow"
                       >
                         <MoreHorizontal className="h-4 w-4" />
                       </Button>

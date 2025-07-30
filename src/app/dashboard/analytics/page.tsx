@@ -91,7 +91,7 @@ export default function AnalyticsPage() {
                   size="sm"
                   className={filter.active 
                     ? "bg-main text-main-foreground shadow-shadow" 
-                    : "border-2 border-border shadow-shadow"
+                    : "border border-border shadow-shadow"
                   }
                 >
                   {filter.label}
@@ -139,7 +139,7 @@ export default function AnalyticsPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="h-[300px] flex items-center justify-center text-foreground/60 border-2 border-dashed border-border rounded-base">
+              <div className="h-[300px] flex items-center justify-center text-foreground/60 border border-dashed border-border rounded-base">
                 📈 Line chart showing clicks over time will be implemented here
               </div>
             </CardContent>
@@ -153,7 +153,7 @@ export default function AnalyticsPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="h-[300px] flex items-center justify-center text-foreground/60 border-2 border-dashed border-border rounded-base">
+              <div className="h-[300px] flex items-center justify-center text-foreground/60 border border-dashed border-border rounded-base">
                 🥧 Donut chart showing revenue distribution will be implemented here
               </div>
             </CardContent>
@@ -170,7 +170,7 @@ export default function AnalyticsPage() {
               {mockTopLinks.map((link, index) => (
                 <div 
                   key={index}
-                  className="flex items-center justify-between p-4 border-2 border-border rounded-base bg-secondary-background"
+                  className="flex items-center justify-between p-4 border border-border rounded-base bg-secondary-background"
                 >
                   <div className="flex items-center gap-4">
                     <div className="flex h-8 w-8 items-center justify-center rounded-base bg-main text-main-foreground font-heading text-sm">
