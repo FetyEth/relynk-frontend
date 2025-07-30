@@ -52,22 +52,26 @@ export default function HeroSection() {
               className="text-5xl lg:text-7xl font-bold relative leading-tight"
               variants={fadeInUp}
             >
-              Create. Share. Get Paid.
+              Create. Share.
               <br />
-              All{" "}
-              <motion.span
-                className="text-main relative"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                Onchain
-                <motion.div
-                  className="absolute -top-2 -right-2"
-                  variants={floatingAnimation}
+              Get Paid.
+              <br />
+              <span className="text-6xl">
+                All{" "}
+                <motion.span
+                  className="text-main relative"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <Star className="w-6 h-6 text-yellow-400 fill-current" />
-                </motion.div>
-              </motion.span>
+                  Onchain
+                  <motion.div
+                    className="absolute -top-2 -right-2"
+                    variants={floatingAnimation}
+                  >
+                    <Star className="w-6 h-6 text-yellow-400 fill-current" />
+                  </motion.div>
+                </motion.span>
+              </span>
             </motion.h1>
             <motion.div
               className="absolute right-0 top-4 text-main"

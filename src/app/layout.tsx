@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Web3Provider } from "./provider";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -25,11 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${spaceGrotesk.variable} antialiased`}>
         {/* <ConsoleFilter /> */}
-        <Web3Provider>
-          <Navbar />
-          {children}
-          <Footer />
-        </Web3Provider>
+        <Web3Provider>{children}</Web3Provider>
       </body>
     </html>
   );

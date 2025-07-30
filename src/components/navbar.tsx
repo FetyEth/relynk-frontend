@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import ConnectWallet from "./ui/connect-wallet";
 
 export default function Navbar() {
   return (
@@ -7,7 +8,9 @@ export default function Navbar() {
         <CardHeader>
           <CardTitle>Paylynk</CardTitle>
         </CardHeader>
-        <CardContent>Home</CardContent>
+        <CardContent>
+          <ConnectWallet className="bg-white shadow-rose-200 border-rose-200" />
+        </CardContent>
       </Card>
     </nav>
   );

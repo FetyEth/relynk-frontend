@@ -19,6 +19,14 @@
   --chart-4: #00d696;
   --chart-5: #5294ff;
   --chart-active-dot: #000;
+  --sidebar: oklch(100% 0 0);
+  --sidebar-foreground: oklch(35% 0 0);
+  --sidebar-primary: oklch(70.79% 0.1862 16.25);
+  --sidebar-primary-foreground: oklch(20% 0 0);
+  --sidebar-accent: oklch(97% 0.0339 12.05);
+  --sidebar-accent-foreground: oklch(35% 0 0);
+  --sidebar-border: oklch(0% 0 0);
+  --sidebar-ring: oklch(0% 0 0);
 }
 
 .dark {
@@ -36,6 +44,14 @@
   --chart-4: #00bd84;
   --chart-5: #5294ff;
   --chart-active-dot: #fff;
+  --sidebar: oklch(23.93% 0 0);
+  --sidebar-foreground: oklch(92.49% 0 0);
+  --sidebar-primary: oklch(67.58% 0.2135 18.63);
+  --sidebar-primary-foreground: oklch(0% 0 0);
+  --sidebar-accent: oklch(25.15% 0.0495 7.54);
+  --sidebar-accent-foreground: oklch(92.49% 0 0);
+  --sidebar-border: oklch(100% 0 0 / 10%);
+  --sidebar-ring: oklch(100% 0 0);
 }
 
 @theme inline {
